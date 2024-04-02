@@ -1,30 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-app-deployment
-spec:
-  replicas: 5
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-app-container
-        image: my-app-image:latest
-        ports:
-        - containerPort: 8080
-        env:
-        - name: CUSTOM_HEADER
-          value: "This is on the DEV environment!"
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-configmap
-data:
-  CUSTOM_HEADER: "This is on the DEV environment!"
-  OTHER_CONFIG: "Some other configuration value"
+replicas: 6
+
+configmap:
+  data:
+    CUSTOM_HEADER: 'This is on the DEV environment!'
