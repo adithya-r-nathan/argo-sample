@@ -1,4 +1,6 @@
-appName: myhelmapp
+# values.yaml
+
+appName: myhelmappsample
 
 port: 80
 
